@@ -1,26 +1,30 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-password-hash",
   "version": "0.1.0",
-  "description": "",
+  "description": "Nodo personalizado para encriptar y validar contraseñas utilizando bcryptjs",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "bcryptjs",
+    "password",
+    "hash",
+    "custom-node"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/<...>/n8n-nodes-password-hash",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Tu Nombre",
+    "email": "tuemail@example.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/<...>/n8n-nodes-password-hash.git"
   },
   "engines": {
     "node": ">=18.10",
     "pnpm": ">=9.1"
   },
   "packageManager": "pnpm@9.1.4",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "tsc && gulp build:icons",
@@ -35,13 +39,8 @@
   ],
   "n8n": {
     "n8nNodesApiVersion": 1,
-    "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
-    ],
     "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/PasswordHash/PasswordHash.node.js"
     ]
   },
   "devDependencies": {
@@ -54,5 +53,8 @@
   },
   "peerDependencies": {
     "n8n-workflow": "*"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2"
   }
 }
